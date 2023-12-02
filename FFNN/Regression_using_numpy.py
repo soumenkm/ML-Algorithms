@@ -212,14 +212,14 @@ class FFNN:
             
             elif optimizer == "MBSGD":
                 m = train_y.shape[1]
-                number_of_batch = (m // batch_size) + 1
+                number_of_batch = np.ceil(m // batch_size)
                 i = np.random.randint(0,number_of_batch)
                 batch_train_x = train_x[:, batch_size * i: min(batch_size * (i+1) - 1, m - 1)]
                 batch_train_y = train_y[:, batch_size * i: min(batch_size * (i+1) - 1, m - 1)]
 
-                if batch_train_x.shape[0] == batch_train_x.size:
-                    batch_train_x = batch_train_x.reshape(-1,1)
-                    batch_train_y = batch_train_y.reshape(-1,1)
+                # if batch_train_x.shape[0] == batch_train_x.size:
+                #     batch_train_x = batch_train_x.reshape(-1,1)
+                #     batch_train_y = batch_train_y.reshape(-1,1)
 
                 loss = self.update_parameter(batch_train_x, batch_train_y, learning_rate, clip_value)
                 print(f"Epoch: {ep}, Optimizer: {optimizer}, Loss: {loss.mean()}")
