@@ -94,15 +94,6 @@ tensorboard_callback = tf.keras.callbacks.TensorBoard(log_dir="./logs",
                                                       write_images=True,
                                                       update_freq="epoch")
 
-# filepath = "./checkpoint/model-epoch-{epoch}-loss-{loss:.2f}"
-# ckpt_callback = tf.keras.callbacks.ModelCheckpoint(filepath=filepath,
-#                                                    monitor="loss",
-#                                                    verbose=1,
-#                                                    save_best_only=False,
-#                                                    save_weights_only=False,
-#                                                    mode="min",
-#                                                    save_freq=50)
-
 filepath = "./checkpoint/weights-epoch-{epoch}.ckpt"
 ckpt_callback = tf.keras.callbacks.ModelCheckpoint(filepath=filepath,
                                                    verbose=1,
@@ -153,18 +144,20 @@ plt.legend()
 #                               steps=None)
 
 #%% Save and Load model
-model_filepath = "./model/model-LR"
-model.save(model_filepath)
+# model_filepath = "./model/model-LR"
+# model.save(model_filepath)
 
-model2 = tf.keras.models.load_model(model_filepath)
-# model2.compile(optimizer=tf.keras.optimizers.legacy.SGD(learning_rate=0.01,
-#                                                         momentum=0),
-#                loss=tf.keras.losses.MeanSquaredError(),
-#                metrics=[tf.keras.metrics.R2Score()])
+# model2 = tf.keras.models.load_model(model_filepath)
 
-eval_result = model2.evaluate(x=test_ds,
-                              verbose=1,
-                              steps=None)
+# # model2 = tf.keras.models.load_model(model_filepath, compile=False)
+# # model2.compile(optimizer=tf.keras.optimizers.legacy.SGD(learning_rate=0.01,
+# #                                                         momentum=0),
+# #                loss=tf.keras.losses.MeanSquaredError(),
+# #                metrics=[tf.keras.metrics.R2Score()])
+
+# eval_result = model2.evaluate(x=test_ds,
+#                               verbose=1,
+#                               steps=None)
 
 
 
