@@ -389,7 +389,7 @@ class MultiheadCrossAttentionLayer(MultiHeadAttentionLayer):
 
         return y
 
-#%% Test the encoder and decoder layer
+#%% Test the transformer model
 batch_size = 64
 seq_length = 128
 
