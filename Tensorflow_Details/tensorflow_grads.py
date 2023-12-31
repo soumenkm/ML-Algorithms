@@ -6,7 +6,7 @@ Created on Sun Dec 12 11:57:46 2023
 @author: soumensmacbookair
 """
 
-# Import the libraries
+#%% Import the libraries
 import time
 import numpy as np
 import tensorflow as tf

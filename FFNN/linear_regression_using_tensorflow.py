@@ -6,10 +6,12 @@ Created on Sat Dec  2 20:03:52 2023
 @author: soumensmacbookair
 """
 
+#%% Imports
 import numpy as np
 import tensorflow as tf
 import matplotlib.pyplot as plt
 
+#%% Datset
 train_x = tf.range(10,dtype=tf.float32)
 train_y = tf.constant([1.0, 1.3, 3.1, 2.0, 5.0, 6.3, 6.6, 7.4, 8.0, 9.0])
 train_x_norm = (train_x -
